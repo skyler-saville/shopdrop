@@ -28,15 +28,15 @@ The main concept behind the site is to allow people the ability to order items f
 ------------
 
 The MongoDB database is utilizing mLab as a means to store the data. 
-### mongodb://<dbuser>:<dbpassword>@ds113628.mlab.com:13628/<dbname>
-*need to create a variable for the uri path to keep information private*
+
 ------------
 ## Getting Started
 
-To start Express.js and connect to the database, run `node server.js` or `npm run start`. Postman is required to make http _GET_ and _POST_ requests to several of the unimplemented collection paths. 
+To start Express.js and connect to the database, follow the instructions at the top of this README.md file. Postman has been heavily used to make HTTP _GET_ and _POST_ requests to several of the collection paths. Not all HTTP methods are working 100%.
 
-Resources: 
-_(restaurants)_
+Resources:
+
+_(Users - Vulcans)_
 (Attributes):
  * Name _(Order)_
  * Address _(address.street)_
@@ -46,19 +46,81 @@ _(restaurants)_
  * Rating _(rating)_
  * Logo _(logo_url)_
 
- _(users)_
+ _(Users - Admins)_
+(Attributes):
+ * Name _(Order)_
+ * Address _(address.street)_
+ * City _(address.city)_
+ * State _(address.state)_
+ * Zip Code _(address.zip)_
+ * Rating _(rating)_
+ * Logo _(logo_url)_
+
+ _(Users - Droppers)_
+(Attributes):
+ * Name _(Order)_
+ * Address _(address.street)_
+ * City _(address.city)_
+ * State _(address.state)_
+ * Zip Code _(address.zip)_
+ * Rating _(rating)_
+ * Logo _(logo_url)_
+
+ _(Users - Shoppers)_
+(Attributes):
+ * Name _(Order)_
+ * Address _(address.street)_
+ * City _(address.city)_
+ * State _(address.state)_
+ * Zip Code _(address.zip)_
+ * Rating _(rating)_
+ * Logo _(logo_url)_
+
+ _(Users - Guests)_
+(Attributes):
+ * Name _(Order)_
+ * Address _(address.street)_
+ * City _(address.city)_
+ * State _(address.state)_
+ * Zip Code _(address.zip)_
+ * Rating _(rating)_
+ * Logo _(logo_url)_
+
+ _(Locations)_
 (Attributes):
  * Name _(name)_
  * Email _(email)_
  * Avatar Url _(avatar_url)_
 
-  _(reservations)_
+  _(Brands)_
 (Attributes):
- * Location _(location)_
- * Total Attendees _(total)_
- * Attendees List _(attendees)_
- * Date & Time _(date)_
- * Point of contact _(pointOfContact)_
+ * Name _(name)_
+ * Email _(email)_
+ * Avatar Url _(avatar_url)_
+
+  _(Products)_
+(Attributes):
+ * Name _(name)_
+ * Email _(email)_
+ * Avatar Url _(avatar_url)_
+
+  _(Orders)_
+(Attributes):
+ * Name _(name)_
+ * Email _(email)_
+ * Avatar Url _(avatar_url)_
+
+ _(Content)_
+(Attributes):
+ * Name _(name)_
+ * Email _(email)_
+ * Avatar Url _(avatar_url)_
+
+  _(Queries)_
+(Attributes):
+ * Name _(name)_
+ * Email _(email)_
+ * Avatar Url _(avatar_url)_
 
 ------------
  ### User Endpoints:
