@@ -23,14 +23,12 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 # ShopDrop Delivery Service
 
 ## Purpose of the site
-The main concept behind the site is to allow people the ability to order items from different locations, for example: groceries from a grocery store, then have those items delivered to their door. create "potential" reservations to several different locations. Though a good lot of the idea is not yet implemented, users **can** create reservations and delete them. 
+The main concept behind the site is to allow people the ability to order items from different locations, for example: groceries from a grocery store, then have those items delivered to their door. Though a good lot of the concept has not yet been implemented, users **will** soon be able to create accounts to test out the API's usefulness. 
 
 ------------
-Based the previous assignments, this assignment uses Node, Express, MongoDB, Mongoose, and Vue.js. 
-Live current version of the app can be found [Here](https://grubspy-midterm.herokuapp.com/).
 
 The MongoDB database is utilizing mLab as a means to store the data. 
-### mongodb://<dbuser>:<dbpassword>@ds113628.mlab.com:13628/prieor_db
+### mongodb://<dbuser>:<dbpassword>@ds113628.mlab.com:13628/<dbname>
 *need to create a variable for the uri path to keep information private*
 ------------
 ## Getting Started
