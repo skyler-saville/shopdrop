@@ -62,25 +62,76 @@ _(restaurants)_
  * Date & Time _(date)_
  * Point of contact _(pointOfContact)_
 
-
 ------------
- ### Rest Endpoints:
+ ### User Endpoints:
 HTTP method | Path | Name
 --- | --- | ---
- GET | /restaurants | List
- GET | /users | List
- GET | /users/:id | Retrieve
- GET | /reservations | Index/List
- GET | /reservations/:id | Delete
+POST | /users/vulcans | Create
+GET | /users/vulcans | List
+GET | /users//vulcans/:id | Retrieve
+PUT | /users/vulcans/:id | Update/Replace
+DELETE | /users/vulcans/:id | Delete
+POST | /users/admins | Create
+GET | /users/admins | List
+GET | /users//admins/:id | Retrieve
+PUT | /users/admins/:id | Update/Replace
+DELETE | /users/admins/:id | Delete
+POST | /users/droppers | Create
+GET | /users/droppers | List
+GET | /users//droppers/:id | Retrieve
+PUT | /users/droppers/:id | Update/Replace
+DELETE | /users/droppers/:id | Delete
+POST | /users/shoppers | Create
+GET | /users/shoppers | List
+GET | /users//shoppers/:id | Retrieve
+PUT | /users/shoppers/:id | Update/Replace
+DELETE | /users/shoppers/:id | Delete
+POST | /users/guests | Create
+GET | /users/guests | List
+GET | /users//guests/:id | Retrieve
+PUT | /users/guests/:id | Update/Replace
+DELETE | /users/guests/:id | Delete
 
-Not implemented in the current version:
+ ### Brand Endpoints:
 HTTP method | Path | Name
 --- | --- | ---
- PUT | /reservations/:id | Replace
+POST | /brands | Create
+GET | /brands | List
+GET | /brands/:id | Retrieve
+PUT | /brands/:id | Update/Replace
+DELETE | /brands/:id | Delete
+
+ ### Location Endpoints:
+HTTP method | Path | Name
+--- | --- | ---
+POST | /locations | Create
+GET | /locations | List
+GET | /locations/:id | Retrieve
+PUT | /locations/:id | Update/Replace
+DELETE | /locations/:id | Delete
+
+ ### Product Endpoints:
+HTTP method | Path | Name
+--- | --- | ---
+POST | /products | Create
+GET | /products | List
+GET | /products/:id | Retrieve
+PUT | /products/:id | Update/Replace
+DELETE | /products/:id | Delete
+
+ ### Orders Endpoints:
+HTTP method | Path | Name
+--- | --- | ---
+POST | /orders | Create
+GET | /orders | List
+GET | /orders/:id | Retrieve
+PUT | /orders/:id | Update/Replace
+DELETE | /orders/:id | Delete
+
 ------------
 ## Deployment
 
-Deplyed live on [Heroku](https://grubspy-midterm.herokuapp.com)
+Deplyed live on [Heroku](https://xxx.herokuapp.com)
 
 ------------
 ## Built With
@@ -91,9 +142,19 @@ Deplyed live on [Heroku](https://grubspy-midterm.herokuapp.com)
 * [Mongoose](http://mongoosejs.com/docs/guide.html) - Used to create models and schema for database
 * [mLab](http://docs.mlab.com/) - Used as cloud storage for the database
 * [Vue.js](https://vuejs.org/) - Used to handle the client-side 
+* [Nuxt](https://nuxtjs.org/) - 
+* [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme) - Password Encryption
+* [Passport](http://www.passportjs.org/docs/) - Authentication
+* [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme) - Session Data Encryption
+* [marked](https://marked.js.org/#/README.md) - Markdown to HTML 
+
+### Helpers
+
+* [Tipe.io](https://tipe.io/) - 
+* [Walmart Open API](https://developer.walmartlabs.com/)
 
 ------------
 ## Acknowledgments
 
-* This was built as part of an assignment and intended to only be used within the scope of the class.
-* [Github Repo](https://github.com/dsu-cit-csweb4200/s18-project1-skyler-saville)
+* This is intended for business use. Any duplication of unique code or within the scope of the class.
+* [Github Repo](https://github.com/skyler-saville/shopdrop)
