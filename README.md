@@ -34,93 +34,115 @@ The MongoDB database is utilizing mLab as a means to store the data.
 
 To start Express.js and connect to the database, follow the instructions at the top of this README.md file. Postman has been heavily used to make HTTP _GET_ and _POST_ requests to several of the collection paths. Not all HTTP methods are working 100%.
 
-Resources:
+## Resource Models:
 
 _(Users - Vulcans)_
 (Attributes):
- * Name _(Order)_
- * Address _(address.street)_
- * City _(address.city)_
- * State _(address.state)_
- * Zip Code _(address.zip)_
- * Rating _(rating)_
- * Logo _(logo_url)_
+  * First Name _(name.first)_
+  * Last Name _(name.last)_
+  * Email _(email)_
+  * Ecrypted Password _(password)_
+  * Phone Number _(phone)_
+  * Account _(account_type)_
+  * Active Setting _(_isActive)_
 
  _(Users - Admins)_
 (Attributes):
- * Name _(Order)_
- * Address _(address.street)_
- * City _(address.city)_
- * State _(address.state)_
- * Zip Code _(address.zip)_
- * Rating _(rating)_
- * Logo _(logo_url)_
+  * First Name _(name.first)_
+  * Last Name _(name.last)_
+  * Email _(email)_
+  * Ecrypted Password _(password)_
+  * Phone Number _(phone)_
+  * Account _(account_type)_
+  * Active Setting _(_isActive)_
 
  _(Users - Droppers)_
 (Attributes):
- * Name _(Order)_
- * Address _(address.street)_
- * City _(address.city)_
- * State _(address.state)_
- * Zip Code _(address.zip)_
- * Rating _(rating)_
- * Logo _(logo_url)_
+  * First Name _(name.first)_
+  * Last Name _(name.last)_
+  * Email _(email)_
+  * Ecrypted Password _(password)_
+  * Phone Number _(phone)_
+  * Account _(account_type)_
+  * Active Setting _(_isActive)_
+  * Current Orders [_(orders.current)_]
+  * Previous Orders [_(orders.previous)_]
+  * Cancelled Orders [_(orders.cancelled)_]
+  * Drivers License Number _(drivers_license.number)_
+  * Drivers License State _(drivers_license.state)_
 
  _(Users - Shoppers)_
 (Attributes):
- * Name _(Order)_
- * Address _(address.street)_
- * City _(address.city)_
- * State _(address.state)_
- * Zip Code _(address.zip)_
- * Rating _(rating)_
- * Logo _(logo_url)_
+  * First Name _(name.first)_
+  * Last Name _(name.last)_
+  * Email _(email)_
+  * Ecrypted Password _(password)_
+  * Phone Number _(phone)_
+  * Account _(account_type)_
+  * Active Setting _(_isActive)_
+  * Street Address _(address.street)_
+  * Aptartment/Unit _(address.apt)_
+  * City _(address.city)_
+  * State _(address.state)_
+  * Zipcode _(address.zip)_
+  * Delivery Instructions _(address.instructions)_
+  * Current Orders [_(orders.current)_]
+  * Previous Orders [_(orders.previous)_]
+  * Cancelled Orders [_(orders.previous)_]
 
- _(Users - Guests)_
-(Attributes):
- * Name _(Order)_
- * Address _(address.street)_
- * City _(address.city)_
- * State _(address.state)_
- * Zip Code _(address.zip)_
- * Rating _(rating)_
- * Logo _(logo_url)_
+> Had considered using "Guest" logins... But poses authentication issues for other user types.
 
  _(Locations)_
 (Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
+  * Location Name _(name)_
+  * Website URL _(website)_
+  * Phone Number _(phone)_
+  * Street Address _(address.street)_
+  * Aptartment/Unit _(address.apt)_
+  * City _(address.city)_
+  * State _(address.state)_
+  * Zipcode _(address.zip)_
+  * Delivery Instructions _(address.instructions)_
+  * Associated Brands _(associated_brands)_
+   
 
   _(Brands)_
 (Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
+  * Brand Name _(name)_
+  * Brand API URI _(api)_
+  * Website _(website)_
+  * Activity Status _(active)_
+  * Product ID's [_(products)_]
 
   _(Products)_
 (Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
+  * Product Name _(name)_
+  * Size _(size)_
+  * Variation _(variation)_
+  * Activity Status _(active)_
+  * Estimated Price _(estimated_price)_
+  * Image URL _(img_url)_
+  * UPC Number _(upc)_
+  * Brand Association _(associated_with)_
 
   _(Orders)_
 (Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
-
- _(Content)_
-(Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
-
-  _(Queries)_
-(Attributes):
- * Name _(name)_
- * Email _(email)_
- * Avatar Url _(avatar_url)_
+  * Ordered By _(ordered_by)_
+  * Assigned Dropper _(dropper_assigned)_
+  * Order Nickname _(nickname)_
+  * Activity Statud _(active)_
+  * Order Status _(status)_
+  * Know Items Array [_(known_items)_]
+  * Unknown Items Array [_(unknown_items)_]
+    * Unknown Product Name _(product.name)_
+    * Unknown Product Size _(product.size)_
+    * Unknown Product Variation _(product.variation)_
+    * Unknown Product Activity _(product.active)_
+    * Unknown Product UPC _(product.upc)_
+    * Unknown Product Brand Name _(product.brand_name)_
+  * Order Total Quantity _(order_quantity)_
+  * Date Order Was Created _(date_created)_
+  * Order Number _(order_number)_
 
 ------------
  ### User Endpoints:
@@ -188,6 +210,19 @@ GET | /orders/:id | Retrieve
 PUT | /orders/:id | Update/Replace
 DELETE | /orders/:id | Delete
 
+ ### Content Endpoints:
+HTTP method | Path | Name
+--- | --- | ---
+GET | /content/home | List
+
+ ### Orders Endpoints:
+HTTP method | Path | Name
+--- | --- | ---
+GET | /queries/search | List  _(req.query.query)_ & _(req.query.categoryId)_
+GET | /queries/item | List  _(req.query.itemId)_
+GET | /queries/upc_search | List  _(req.query.upc)_
+GET | /queries/taxonomy | List
+
 ------------
 ## Deployment
 
@@ -202,7 +237,7 @@ Deplyed live on [Heroku](https://xxx.herokuapp.com)
 * [Mongoose](http://mongoosejs.com/docs/guide.html) - Used to create models and schema for database
 * [mLab](http://docs.mlab.com/) - Used as cloud storage for the database
 * [Vue.js](https://vuejs.org/) - Used to handle the client-side 
-* [Nuxt](https://nuxtjs.org/) - 
+* [Nuxt](https://nuxtjs.org/) - Vue.js Framework
 * [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme) - Password Encryption
 * [Passport](http://www.passportjs.org/docs/) - Authentication
 * [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme) - Session Data Encryption
@@ -210,8 +245,8 @@ Deplyed live on [Heroku](https://xxx.herokuapp.com)
 
 ### Helpers
 
-* [Tipe.io](https://tipe.io/) - 
-* [Walmart Open API](https://developer.walmartlabs.com/)
+* [Tipe.io](https://tipe.io/) - API friendly CMS
+* [Walmart Open API](https://developer.walmartlabs.com/) - Search API
 
 ------------
 ## Acknowledgments
