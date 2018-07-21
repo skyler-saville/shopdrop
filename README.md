@@ -79,7 +79,7 @@ _(Users - Vulcans)_
   * Ecrypted Password _(password)_
   * Phone Number _(phone)_
   * Account _(account_type)_
-  * Active Setting _(_isActive)_
+  * Active Setting _(isActive)_
   * Street Address _(address.street)_
   * Aptartment/Unit _(address.apt)_
   * City _(address.city)_
@@ -149,29 +149,29 @@ _(Users - Vulcans)_
 HTTP method | Path | Name
 --- | --- | ---
 POST | /users/vulcans | Create
-GET | /users/vulcans | List
-GET | /users//vulcans/:id | Retrieve
-PUT | /users/vulcans/:id | Update/Replace
-DELETE | /users/vulcans/:id | Delete
 POST | /users/admins | Create
-GET | /users/admins | List
-GET | /users//admins/:id | Retrieve
-PUT | /users/admins/:id | Update/Replace
-DELETE | /users/admins/:id | Delete
 POST | /users/droppers | Create
-GET | /users/droppers | List
-GET | /users//droppers/:id | Retrieve
-PUT | /users/droppers/:id | Update/Replace
-DELETE | /users/droppers/:id | Delete
 POST | /users/shoppers | Create
-GET | /users/shoppers | List
-GET | /users//shoppers/:id | Retrieve
-PUT | /users/shoppers/:id | Update/Replace
-DELETE | /users/shoppers/:id | Delete
 POST | /users/guests | Create
+GET | /users/vulcans | List
+GET | /users/admins | List
+GET | /users/droppers | List
+GET | /users/shoppers | List
 GET | /users/guests | List
+GET | /users/vulcans/:id | Retrieve
+GET | /users/admins/:id | Retrieve
+GET | /users/droppers/:id | Retrieve
+GET | /users//shoppers/:id | Retrieve
 GET | /users//guests/:id | Retrieve
+PUT | /users/vulcans/:id | Update/Replace
+PUT | /users/admins/:id | Update/Replace
+PUT | /users/droppers/:id | Update/Replace
+PUT | /users/shoppers/:id | Update/Replace
 PUT | /users/guests/:id | Update/Replace
+DELETE | /users/vulcans/:id | Delete
+DELETE | /users/admins/:id | Delete
+DELETE | /users/droppers/:id | Delete
+DELETE | /users/shoppers/:id | Delete
 DELETE | /users/guests/:id | Delete
 
  ### Brand Endpoints:
@@ -210,7 +210,7 @@ GET | /orders/:id | Retrieve
 PUT | /orders/:id | Update/Replace
 DELETE | /orders/:id | Delete
 
- ### Content Endpoints:
+ ### Content Endpoints (page content):
 HTTP method | Path | Name
 --- | --- | ---
 GET | /content/home | List
