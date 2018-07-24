@@ -242,6 +242,8 @@ Deplyed live on [Heroku](https://xxx.herokuapp.com)
 * [Passport](http://www.passportjs.org/docs/) - Authentication
 * [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#readme) - Session Data Encryption
 * [marked](https://marked.js.org/#/README.md) - Markdown to HTML 
+* [striptags](https://www.npmjs.com/package/striptags) - Remove HTML tags from strings
+* [Vuetify](https://vuetifyjs.com/en/getting-started/quick-start) - Material Design based UI Framework
 
 ### Helpers
 

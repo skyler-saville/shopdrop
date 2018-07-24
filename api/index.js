@@ -184,7 +184,7 @@ app.post('/login', function (req, res, next) {
 app.set('port', (process.env.PORT || 3000))
 
 // mLab Connection
-mongoose.connect(MONGOOSE_URI, function (err) {
+mongoose.connect(MONGOOSE_URI, { useNewUrlParser: true }, function (err) {
   if (err) {
     console.log('There was an error with the connection')
     throw err

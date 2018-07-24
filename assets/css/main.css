@@ -26,3 +26,21 @@ a, a:hover, a:focus, a:visited
   max-width: 400px;
   max-height: 289px;
 }
+
+.shop-green {
+  background-color: #68B07D;
+}
+.shop-green--text {
+  color: #68B07D
+}
+
+.shop-blue {
+  background-color: #3A4799;
+}
+.shop-blue--text {
+  color: #3A4799;
+}
+
+nav#navbar {
+  background: transparent;
+}
