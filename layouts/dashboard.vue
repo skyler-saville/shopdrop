@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire" dark>
+  <v-app id="inspire">
     <v-navigation-drawer
       v-model="drawer"
       clipped
@@ -7,6 +7,7 @@
       app
     >
       <v-list dense>
+        <img id="logo" src="~/assets/img/logo.png" alt="" class="responsive-img">
         <v-list-tile @click="test">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
@@ -40,7 +41,7 @@
       </v-container>
     </v-content>
     <v-footer app fixed>
-      <span>&copy; 2017</span>
+      <span>&copy;{{year}} — <strong>ShopDrop</strong> All Rights Reserved.</span>
     </v-footer>
   </v-app>
 </template>
@@ -49,7 +50,8 @@
   export default {
     data: () => ({
       drawer: true,
-      user: 'Skyler'
+      user: 'Skyler',
+      year: (new Date()).getFullYear()
     }),
     props: {
       source: String
@@ -61,3 +63,9 @@
     }
   }
 </script>
+
+<style scoped>
+img#logo {
+  padding: 1.5em;
+}
+</style>
