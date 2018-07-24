@@ -253,5 +253,5 @@ Deplyed live on [Heroku](https://xxx.herokuapp.com)
 ------------
 ## Acknowledgments
 
-* This is intended for business use. Any duplication of unique code or within the scope of the class.
+* This is intended for business use. Any duplication of unique code or use without written permission may .
 * [Github Repo](https://github.com/skyler-saville/shopdrop)
