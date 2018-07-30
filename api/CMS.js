@@ -7,7 +7,8 @@ const DOCUMENT_IDS = {
   _footer1: '5b52a9062bfbea00139aaf14',
   _header1: '5b52a9390b1b2d0013efbe8a',
   _header_visitors: '5b536ef0a05a540013a4bab5',
-  _image_test: '5b5385e547b29e0013c02177'
+  _image_test: '5b5385e547b29e0013c02177',
+  _privacy_policy: '5b5eaef291969000137541a8'
 }
 
 const FOLDER_IDS = {

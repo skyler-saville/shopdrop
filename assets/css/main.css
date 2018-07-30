@@ -1,3 +1,8 @@
+/* .responsive-img {
+  width: 100%;
+  height: auto;
+} */
+
 html, body
 {
   background-color: #fff;
@@ -17,7 +22,7 @@ footer
 
 a, a:hover, a:focus, a:visited
 {
-  color: #000;
+  color: #fff;
 }
 
 .logo {

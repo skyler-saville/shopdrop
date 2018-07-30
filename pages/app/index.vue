@@ -1,5 +1,5 @@
-<template id="loginTemplate">
-<div style="color: green; padding: 3em; background-color: turquoise;" v-html="content"></div>
+<template id="homeTemplate">
+  <div class='shop-blue shop-green--text' style="padding: 2em" v-html="content"></div>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ import * as striptags from 'striptags'
 
 export default {
   async asyncData () {
-    let { data } = await axios.get('/api/content/dashboard')
+    let { data } = await axios.get('/api/content/home')
     return {
       title: data.title,
       content: data.content

@@ -7,7 +7,7 @@
       app
     >
       <v-list dense>
-        <img id="logo" src="~/assets/img/logo.png" alt="" class="responsive-img">
+        <nuxt-link to="/"><img id="logo" src="~/assets/img/logo.png" alt="" class="responsive-img"></nuxt-link>
         <!-- view orders -->
         <v-list-tile @click="test">
           <v-list-tile-action>
@@ -68,7 +68,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Welcome back, {{ user }}!</v-toolbar-title>
     </v-toolbar>
-    <v-content>
+    <v-content class='shop-blue'>
       <v-container fluid fill-height>
         <v-layout justify-center align-center>
           <v-flex shrink>
@@ -105,5 +105,9 @@
 <style scoped>
 img#logo {
   padding: 1.5em;
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
 }
 </style>

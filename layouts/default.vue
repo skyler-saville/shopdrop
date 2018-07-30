@@ -1,21 +1,19 @@
 <template>
   <div>
-    <visitor-header/>
+    <toolbar/>
     <nuxt/>
     <my-footer/>
   </div>
 </template>
 
 <script>
-import VisitorHeader from '~/components/visitor-header.vue'
+import Toolbar from '~/components/test/Toolbar.vue'
 import MyFooter from '~/components/Footer.vue'
-import Navbar from '~/components/Navbar.vue'
 
 export default {
   components: {
     MyFooter,
-    VisitorHeader,
-    Navbar
+    Toolbar
     
   }
 }

@@ -1,4 +1,4 @@
-<template id="image-testTemplate">
+<template id="shopperTemplate">
 <div class="container">
   <div class="row">
     <div class="col s6 red">{{ content }}</div>
@@ -16,7 +16,7 @@ import axios from '~/plugins/axios'
 // import * as striptags from 'striptags'
 
 export default {
-  layout: 'dashboard',
+  layout: 'dashboard-shopper',
   async asyncData () {
     let { data } = await axios.get('/api/content/image_test')
     return {

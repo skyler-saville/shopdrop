@@ -217,6 +217,28 @@ router.route('/content/image_test')
       })
   })
 
+router.route('/content/privacy_policy')
+  .get(function (req, res) {
+    fetch('https://api.tipe.io/api/v1/document/' + DOCUMENT_IDS._privacy_policy, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': YOUR_API_KEY,
+        'Tipe-Id': YOUR_ORG_SECRET_KEY
+      }
+    })
+      .then(function (res) { return res.json() })
+      .then(function (data) {
+        console.log('Privacy Policy Reqested')
+        console.log(data.blocks[0])
+        const doc = data.blocks[0].value
+
+        res.json({
+          content: marked(doc)
+        })
+      })
+  })
+
 /**
  * Export the router
  */
