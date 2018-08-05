@@ -56,3 +56,7 @@ nav#navbar {
 .test-enter, .test-leave-active {
   opacity: 0;
 }
+
+img.v-jumbotron__image {
+  opacity: .3;
+}

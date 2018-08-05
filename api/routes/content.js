@@ -194,7 +194,7 @@ router.route('/content/login')
       })
   })
 
-router.route('/content/footer1')
+router.route('/content/visitor-footer')
   .get(function (req, res) {
     fetch('https://api.tipe.io/api/v1/document/' + DOCUMENT_IDS._footer1, {
       method: 'get',
@@ -207,11 +207,9 @@ router.route('/content/footer1')
       .then(function (res) { return res.json() })
       .then(function (data) {
         console.log(data)
-        const title = data.blocks[0].value
         const content = data.blocks[1].value
 
         res.json({
-          title: marked(title),
           content: marked(content)
         })
       })

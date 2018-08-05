@@ -12,12 +12,12 @@
       nuxt
       to="/app/contact"
     >
-      Test
+      contact
     </v-btn>
     <v-btn
       color='shop-green'
       nuxt
-      to="/app/signup"
+      to="/app/shopper/signup"
     >
       Sign Up
     </v-btn>

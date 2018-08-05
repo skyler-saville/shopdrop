@@ -5,13 +5,13 @@
     class="menu-height"
     >
     <v-toolbar-title class="menu-height white--text">
-      <nuxt-link class="title" to="/">
+      <nuxt-link class="title" to="/app">
         <img id="toolbar-logo" src="~/assets/img/logo.png" alt="" class="responsive-img">
       </nuxt-link>
     </v-toolbar-title>
     <v-spacer id="spacer"></v-spacer>
     <visitor-buttons/>
-    <v-toolbar-side-icon color="shop-green"></v-toolbar-side-icon>
+    <!-- <v-toolbar-side-icon color="shop-green"></v-toolbar-side-icon> -->
   </v-toolbar>
 </template>
 <script>

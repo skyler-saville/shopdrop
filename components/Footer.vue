@@ -1,7 +1,7 @@
 <template>
   <v-footer
     height="auto"
-    class="shop-blue white--text text-xs-center"
+    class="shop-blue white--text text-md-center"
   >
     <v-card
       flat
@@ -20,7 +20,7 @@
       </v-card-text> -->
 
       <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        <strong>Shop Drop Delivery</strong> is a locally owned business that provides deliveries to Southern Utah families and businesses. We deliver groceries and other household items from any grocery store. This service helps you to have more time to spend with family and friends, more energy to go throughout the day, along with the peace of mind that one of our friendly shoppers will give you the best experience possible. We support individual orders and businesses.
       </v-card-text>
 
       <v-divider></v-divider>

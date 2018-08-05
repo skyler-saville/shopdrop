@@ -1,18 +1,68 @@
 <template id="homeTemplate">
 <div id='outer-page-container'>
-  <v-jumbotron
+  <div id="jumbotron-overlay">
+    <v-jumbotron
     dark
+    ripple
+    height="50em"
     :src="img4.url"
-  >
-    <v-container fill-height>
-      <v-layout align-center>
-        <v-flex text-xs-center>
-          <h3 class="display-4">Welcome to ShopDrop</h3>
+    id='jumbo-content'
+    >
+      <v-container fill-height >
+        <v-layout align-center>
+        <v-flex
+         text-sm-center
+        >
+        <h4 class="display-3">ShopDrop Delivery</h4>
+        <v-layout>
+          <v-flex
+            sm10
+            offset-sm1
+            xs12
+          >
+            <h4 id="mission" class="title" v-html="mission"></h4>
+          </v-flex>
+        </v-layout>
+
+        <!-- learn more button -->
+        <v-layout>
+          <v-flex
+          sm2
+          offset-sm4
+          xs12
+          >
+          <!-- Sign up button -->
+          <v-btn 
+            large 
+            dark 
+            color="blue"
+            href="/app/shopper/signup"
+          >
+            Sign Up!
+          </v-btn>
+          </v-flex>
+          <v-flex
+          sm2
+          xs12
+          >
+          <!-- Learn more button -->
+          <v-btn 
+            large 
+            dark 
+            color="blue"
+            href="/app/about"
+          >
+            Learn More
+          </v-btn>
+          </v-flex>
+        </v-layout>
         </v-flex>
-      </v-layout>
-    </v-container>
-  </v-jumbotron>
-  <v-container>
+        </v-layout>
+      </v-container>
+    </v-jumbotron>
+  </div>
+  
+  <!-- <v-container>
     <v-layout row wrap>
       <v-flex sm6>
         <img v-if="missionImg" :src="missionImg.url" :alt="missionImg.alt">
@@ -31,7 +81,7 @@
    <img v-if="img3" class="responsive-img" :src="img3.url" :alt="img3.alt">
    <img v-if="img4" class="responsive-img" :src="img4.url" :alt="img4.alt">
    <img v-if="img5" class="responsive-img" :src="img5.url" :alt="img5.alt">
-</div>
+</div> -->
 </div>
   
 </template>
@@ -71,4 +121,8 @@ export default {
   width: 100%;
   height: auto;
 }
+#jumbotron-overlay {
+  background-color: rgb(58,71,153);
+}
+
 </style>
