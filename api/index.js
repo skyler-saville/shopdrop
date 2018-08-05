@@ -9,6 +9,15 @@ const MONGOOSE_URI = Keys.mlab
 const KEYBOARD_CAT = Keys.cat
 const SECRET_TOKEN = Keys.tokenSecret
 
+// Nuxt
+const { Nuxt, Builder } = require('nuxt')
+const isProd = (process.env.NODE_ENV === 'production')
+// We instantiate nuxt.js with the options
+const config = require('./nuxt.config.js')
+config.dev = !isProd
+const nuxt = new Nuxt(config)
+const port = process.env.PORT || 3000
+
 // Express
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -183,7 +192,7 @@ app.post('/login', function (req, res, next) {
 })
 
 // Configure Environment Port
-app.set('port', (process.env.PORT || 3000))
+// app.set('port', (process.env.PORT || 3000))
 
 // mLab Connection
 mongoose.connect(MONGOOSE_URI, { useNewUrlParser: true }, function (err) {
@@ -231,18 +240,39 @@ router.get('/', function (req, res) {
   }
 })
 
+// Render every route with Nuxt.js
+app.use(nuxt.render)
+
+// Build only in dev mode with hot-reloading
+if (config.dev) {
+  new Builder(nuxt).build()
+    .then(listen)
+    .catch((error) => {
+      console.error(error)
+      process.exit(1)
+    })
+} else {
+  listen()
+}
+
+function listen () {
+  // Listen the server
+  app.listen(port, '0.0.0.0')
+  console.log('Server listening on `localhost:' + port + '`.')
+}
 /**
   * Use environment port and listen
   */
-// app.listen(app.get('port'), function (err) {
-//   if (err) {
-//     console.log('there was an error')
-//   } else {
-//     console.log('Things should be working now')
-//   }
-// }).on('error', function (err) {
-//   console.log(err)
-// })
+
+app.listen(app.get('port'), function (err) {
+  if (err) {
+    console.log('there was an error')
+  } else {
+    console.log('Things should be working now')
+  }
+}).on('error', function (err) {
+  console.log(err)
+})
 
 // Export the server middleware
 module.exports = {
