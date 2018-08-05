@@ -5,7 +5,7 @@ node_modules
 npm-debug.log
 
 # Nuxt build
-.nuxt
+#.nuxt
 
 # Nuxt generate
 dist
@@ -15,3 +15,6 @@ build
 
 # Yarn Build
 yarn.lock
+
+# VS Code settings
+.vscode
