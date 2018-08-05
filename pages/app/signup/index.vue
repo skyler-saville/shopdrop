@@ -4,7 +4,7 @@
 <v-container grid-list-lg>
   <v-layout row wrap>
     <v-flex sm6>
-    <div style="color: green; padding: 3em; background-color: turquoise;" v-html="content"></div>
+    <div id="content-box" style="color: green; padding: 3em; background-color: turquoise;" v-html="content"></div>
     </v-flex>
     <v-flex sm6>
     <shopper-reg/>
@@ -13,7 +13,6 @@
 </v-container>
 
 </div>
-
 </template>
 
 <script>

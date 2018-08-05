@@ -42,10 +42,17 @@
       required
     ></v-text-field>
     
-    <div id="matched">
-      <span v-if="password && password.length > 0" >Passwords Match = {{ cpassword === password }}</span>
+    <div id="matched" v-show="cpassword.length >= 8 && password.length >= 8">
+      <span class="shop-green--text" v-if="(password && password.length >= 8) && (cpassword === password)" >Passwords Match</span>
+      <span class="red--text" v-else>Passwords Do Not Match</span>
     </div>
     
+    <v-text-field
+      v-model="phone"
+      :rules="phoneRules"
+      label="Phone Number"
+      required
+    ></v-text-field>
     <v-text-field
       v-model="street"
       :rules="streetRules"
@@ -54,7 +61,6 @@
     ></v-text-field>
     <v-text-field
       v-model="apt"
-      :rules="aptRules"
       label="Apt/Unit"
     ></v-text-field>
     <v-text-field
@@ -96,13 +102,14 @@
       v-model="instructions"
       :counter="50"
       label="Instructions"
-      required
+      :rules="instructionRules"
+      placeholder="n/a"
     ></v-textarea>
     
   <div>
     <v-dialog
       v-model="dialog"
-      width="500"
+      width="100%"
     >
       <v-btn
         @click="getPolicy"
@@ -174,7 +181,7 @@
 import axios from 'axios'
 
   export default {
-    
+    transition: 'test',
     data: () => ({
       dialog: false,
       content: 'Please fill in the information to create your ShopDrop account!',
@@ -215,12 +222,12 @@ import axios from 'axios'
       first: '',
       fnameRules: [
         v => !!v || 'First Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(v) || 'Name is not valid'
       ],
       last: '',
       lnameRules: [
         v => !!v || 'Last Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(v) || 'Name is not valid'
       ],
       email: '',
       emailRules: [
@@ -240,29 +247,31 @@ import axios from 'axios'
         v => !!v || 'Confirm Password is required',
         v => (this.cpassword === this.password) || "Your Passwords Don't Match"
       ],
+      phone: '',
+      phoneRules: [
+        v => !!v || 'Phone number is required',
+        v => /^(\([0-9]{3}\) |\([0-9]{3}\)|[0-9]{3}-)[0-9]{3}-[0-9]{4}$|[0-9]{10}$/.test(v) || 'Accepted Formats: (435)555-1212 or 435-555-1212'
+      ],
       street: '',
       streetRules: [
         v => !!v || 'Street address is required',
         v => (v && v.length <= 30) || 'Street address must be less than 30 characters'
       ],
       apt: '',
-      aptRules: [
-        v => (v && v.length <= 6) || 'Apt/unit must be less than 6 characters'
-      ],
       city: '',
       cityRules: [
         v => !!v || 'City is required',
-        v => (v && v.length <= 20) || 'City must be less than 20 characters'
+        v => /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/.test || 'City must be less than 20 characters'
       ],
       state: '',
       zip: '',
       zipRules: [
         v => !!v || 'Zip code is required',
-        v => (v && v.length === 5) || 'Zip must be 5 characters'
+        v => /^\d{5}$/.test(v) || 'Zip must be 5 characters'
       ],
       instructions: '',
-      zipRules: [
-        v => (v && v.length <= 50) || 'Zip must be 5 characters'
+      instructionRules: [
+        v => (v && v.length < 50) || '50 characters or less'
       ],
       checkbox: false
     }),
@@ -286,16 +295,48 @@ import axios from 'axios'
       submit () {
         if (this.$refs.form.validate()) {
           // Native form submission is not yet supported
-          axios.post('/api/submit', {
-            name: this.name,
+          axios.post('/api/users/shoppers', {
+            name: {
+              first: this.first,
+              last: this.last
+            },
             email: this.email,
-            select: this.select,
-            checkbox: this.checkbox
+            password: this.password,
+            phone: this.phone,
+            address: {
+              street: this.street,
+              apt: this.apt,
+              city: this.city,
+              state: this.state,
+              zip: this.zip,
+              instructions: this.instructions
+            }
           })
+            .then(function(res) {
+              console.log(res)
+            })
+            .catch(function(err) {
+              console.error(err)
+            })
         }
+        this.clear()
+        router.push({ name: 'app/about'})
       },
       clear () {
-        this.$refs.form.reset()
+        this.first = ''
+        this.last = ''
+        this.email = ''
+        this.password = ''
+        this.cpassword = ''
+        this.phone = ''
+        this.street = ''
+        this.apt = ''
+        this.city = ''
+        this.state = ''
+        this.zip = ''
+        this.instructions = ''
+        console.log("form cleared", this.email)
+        // this.$refs.form.reset()
       }
     }
   }
@@ -326,5 +367,11 @@ select:focus {
 }
 #terms-button {
   color: white;
+}
+div#matched {
+  margin-bottom: 2em;
+}
+.v-messages__message {
+    color: red;
 }
 </style>

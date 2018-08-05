@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  transition: 'test',
   layout: 'coming-soon'
 }
 </script>

@@ -18,6 +18,7 @@ import * as striptags from 'striptags'
 import mainJumbo from '~/components/jumbotron/main.vue'
 
 export default {
+  transition: 'test',
   layout: 'basic',
   async asyncData () {
     let { data } = await axios.get('/api/content/about')

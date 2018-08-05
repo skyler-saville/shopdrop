@@ -26,7 +26,7 @@ var Shopper = require('../../models/users/shopper').Shopper
 const adminUp = require('../../middleware/userAuths').adminUpAuth
 const idOrVulcan = require('../../middleware/userAuths').userIdOrVulcanAuth
 const dropperUp = require('../../middleware/userAuths').dropperUpAuth
-const guestUp = require('../../middleware/userAuths').guestUpAuth
+
 // const openGetAdminUp = require('../../middleware/userAuths').selfGetAdminUpAuth
 // const openGetDropperUp = require('../../middleware/userAuths').selfGetDropperUpAuth
 // const userIdOrVulcan = require('../../middleware/userAuths').userIdOrVulcanAuth
@@ -65,7 +65,7 @@ function validResourceID (req, res) {
  * Users Collection (GET and POST)
  */
 router.route('/users/shoppers')
-  .post(guestUp, function (req, res) { // anyone can create a new shopper account
+  .post(function (req, res) { // anyone can create a new shopper account
     console.log(req.body.address)
     console.log('POST on /users')
     var newResource = new Shopper()

@@ -1,5 +1,7 @@
 const DOCUMENT_IDS = {
   _home: '5b52a75dea19070013b549d8',
+  _homeimages: '5b63db98d604200013d0a4aa',
+  _missionstatement: '5b50563339ad8000130caab8',
   _about: '5b52a858682d400013f102ee',
   _contact: '5b52a8980116ba0013305a46',
   _signup: '5b52a8beab37530013fd3d4b',

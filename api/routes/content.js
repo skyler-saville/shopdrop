@@ -28,13 +28,66 @@ router.route('/content/home')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const title = data.blocks[0].value
         const content = data.blocks[1].value
 
         res.json({
           title: marked(title),
           content: marked(content)
+        })
+      }) // end of _home
+  })
+
+router.route('/content/mission_statement')
+  .get(function (req, res) {
+    fetch('https://api.tipe.io/api/v1/document/' + DOCUMENT_IDS._missionstatement, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': YOUR_API_KEY,
+        'Tipe-Id': YOUR_ORG_SECRET_KEY
+      }
+    })
+      .then(function (res) { return res.json() })
+      .then(function (data) {
+        console.log(data)
+        const content = data.blocks[1].value
+        const image = data.blocks[2].value
+
+        res.json({
+          content: marked(content),
+          url: image.url
+        })
+      })
+  })
+
+router.route('/content/home_images')
+  .get(function (req, res) {
+    fetch('https://api.tipe.io/api/v1/document/' + DOCUMENT_IDS._homeimages, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': YOUR_API_KEY,
+        'Tipe-Id': YOUR_ORG_SECRET_KEY
+      }
+    })
+      .then(function (res) { return res.json() })
+      .then(function (data) {
+        console.log('home_images block[1].value', data.blocks[1].value)
+        // five images in each image template
+        const image1 = data.blocks[0].value
+        const image2 = data.blocks[1].value
+        const image3 = data.blocks[2].value
+        const image4 = data.blocks[3].value
+        const image5 = data.blocks[4].value
+
+        res.json({
+          img1: image1.url,
+          img2: image2.url,
+          img3: image3.url,
+          img4: image4.url,
+          img5: image5.url
         })
       })
   })

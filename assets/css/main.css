@@ -49,3 +49,10 @@ a, a:hover, a:focus, a:visited
 nav#navbar {
   background: transparent;
 }
+
+.test-enter-active, .test-leave-active {
+  transition: opacity .5s;
+}
+.test-enter, .test-leave-active {
+  opacity: 0;
+}

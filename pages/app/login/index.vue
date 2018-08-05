@@ -11,6 +11,7 @@ import axios from '~/plugins/axios'
 import * as striptags from 'striptags'
 
 export default {
+  transition: 'test',
   async asyncData () {
     let { data } = await axios.get('/api/content/login')
     return {

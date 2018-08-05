@@ -60,7 +60,7 @@ function validResourceID (req, res) {
  * Users Collection (GET and POST)
  */
 router.route('/users/vulcans')
-  .post(vulcanOnly, function (req, res) {
+  .post(function (req, res) {
     console.log(req.body.address)
     console.log('POST on /users')
     if (req.authData.account_type === 'vulcan') {

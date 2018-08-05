@@ -57,7 +57,7 @@ function validResourceID (req, res) {
  * Users Collection (GET and POST)
  */
 router.route('/users/admins')
-  .post(vulcanOnly, function (req, res) { // only vulcan can CREATE a new ADMIN
+  .post(function (req, res) { // only vulcan can CREATE a new ADMIN
     console.log(req.body.address)
     console.log('POST on /users/admins')
     var newResource = new Admin()

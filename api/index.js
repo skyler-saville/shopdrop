@@ -36,6 +36,7 @@ const BaseUser = require('./models/users/baseUser').Base
 
 // API Routers
 const contentRouter = require('./routes/content')
+const homeContentRouter = require('./routes/home_content')
 const brandsRouter = require('./routes/brands')
 const locationsRouter = require('./routes/locations')
 const ordersRouter = require('./routes/orders')
@@ -99,6 +100,7 @@ passport.use(new LocalStrategy({
 const router = express.Router()
 
 // apply middleware BEFORE auth checks
+app.use(homeContentRouter)
 app.use(contentRouter)
 
 // use Authentication Middleware on routes

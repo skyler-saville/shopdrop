@@ -57,7 +57,7 @@ function validResourceID (req, res) {
  * Users Collection (GET and POST)
  */
 router.route('/users/droppers')
-  .post(adminUp, function (req, res) { // only vulcan or admin can create a NEW dropper
+  .post(function (req, res) { // only vulcan or admin can create a NEW dropper
     console.log(req.body.address)
     console.log('POST on /users/droppers')
     var newResource = new Dropper()
