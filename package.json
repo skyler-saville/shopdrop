@@ -1,7 +1,10 @@
 {
   "name": "shopdrop-nuxt",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Express/Nuxt.js project",
+  "engines": {
+    "node": "9.4.0"
+  },
   "keywords": [
     "grocery",
     "shopping",
