@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Express/Nuxt.js project",
   "engines": {
-    "node": "9.4.0"
+    "node": "9.4.0",
+    "npm": "6.1.0"
   },
   "keywords": [
     "grocery",
