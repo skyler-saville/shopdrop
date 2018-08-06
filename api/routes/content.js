@@ -11,6 +11,7 @@ const fetch = require('node-fetch')
 const YOUR_ORG_SECRET_KEY = require('../keys').tipeORG
 const YOUR_API_KEY = require('../keys').tipeAPI
 const DOCUMENT_IDS = require('../CMS').Documents
+const FOLDER_IDS = require('../CMS').Folders
 
 /**
  * Home Content Route
@@ -112,6 +113,24 @@ router.route('/content/about')
           title: marked(title),
           content: marked(content)
         })
+      })
+  })
+
+router.route('/content/about-folder')
+  .get(function (req, res) {
+    fetch('https://api.tipe.io/api/v1/folder/' + FOLDER_IDS.__About, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': YOUR_API_KEY,
+        'Tipe-Id': YOUR_ORG_SECRET_KEY
+      }
+    })
+      .then(function (res) { return res.json() })
+      .then(function (folder) {
+        console.log(folder)
+
+        res.json(folder)
       })
   })
 
