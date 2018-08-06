@@ -2,9 +2,17 @@
  * ShopDropDelivery.com
  * Adding dependencies below...
  */
-
+let Keys
 // Keys
-const Keys = require('./keys')
+if (process.env.TESTINGFORAPULSE) {
+  // set keys with env keys
+  Keys = require('./herokeys')
+  console.log('herokeys being used')
+} else {
+  Keys = require('../../keys')
+  console.log('keys being used')
+}
+
 const MONGOOSE_URI = Keys.mlab
 const KEYBOARD_CAT = Keys.cat
 const SECRET_TOKEN = Keys.tokenSecret

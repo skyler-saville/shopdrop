@@ -4,7 +4,16 @@
  * which helps with user authentications
  */
 
-const Keys = require('../../keys')
+let Keys
+// Keys
+if (process.env.TESTINGFORAPULSE) {
+  // set keys with env keys
+  Keys = require('../../herokeys')
+  console.log('herokeys being used')
+} else {
+  Keys = require('../../../../keys')
+  console.log('keys being used')
+}
 const saltRounds = Keys.saltRounds
 const bcrypt = require('bcrypt')
 // const extendSchema = require('mongoose-extend-schema')

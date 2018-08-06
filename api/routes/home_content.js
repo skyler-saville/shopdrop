@@ -4,9 +4,18 @@ var marked = require('marked')
 
 // fetch API npm package
 const fetch = require('node-fetch')
-
-const YOUR_ORG_SECRET_KEY = require('../keys').tipeORG
-const YOUR_API_KEY = require('../keys').tipeAPI
+let Keys
+// Keys
+if (process.env.TESTINGFORAPULSE) {
+  // set keys with env keys
+  Keys = require('../herokeys')
+  console.log('herokeys being used')
+} else {
+  Keys = require('../../../keys')
+  console.log('keys being used')
+}
+const YOUR_ORG_SECRET_KEY = Keys.tipeORG
+const YOUR_API_KEY = Keys.tipeAPI
 const DOCUMENT_IDS = require('../CMS').Documents
 
 const options = {

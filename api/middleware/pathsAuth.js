@@ -1,5 +1,15 @@
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = require('../keys').tokenSecret
+let Keys
+// Keys
+if (process.env.TESTINGFORAPULSE) {
+  // set keys with env keys
+  Keys = require('../herokeys')
+  console.log('herokeys being used')
+} else {
+  Keys = require('../../../keys')
+  console.log('keys being used')
+}
+const SECRET_KEY = Keys.tokenSecret
 const nonAuthPaths = require('./authPaths')
 
 function vulcanAuth (req, res, next) {

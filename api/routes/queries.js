@@ -8,11 +8,21 @@
 var express = require('express')
 var router = express.Router()
 // walmart API
-var _key = '&apiKey=' + require('../keys').walmartKey
-var uri = require('../keys').walmartURI
+let Keys
+// Keys
+if (process.env.TESTINGFORAPULSE) {
+  // set keys with env keys
+  Keys = require('../herokeys')
+  console.log('herokeys being used')
+} else {
+  Keys = require('../../../keys')
+  console.log('keys being used')
+}
+var _key = '&apiKey=' + Keys.walmartKey
+var uri = Keys.walmartURI
 // upcDatabase API
-var _upcKey = require('../keys').upcDBKey
-var _upcUri = require('../keys').upcDBURI
+var _upcKey = Keys.upcDBKey
+var _upcUri = Keys.upcDBURI
 // fetch API npm package
 const fetch = require('node-fetch')
 
