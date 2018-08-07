@@ -12,7 +12,7 @@ const Keys = {
   upcDatabaseAPI: process.env.UPCAPI, // http://upcdatabase.org/
   upcDatabaseURI: process.env.UPCURI, // "t+p-L&]}dyZ)XT86"
   keyboardCat: process.env.KEYBOARDCAT,
-  bcryptSaltRounds: process.env.SALTROUNDS,
+  bcryptSaltRounds: 12,
   tokenSecret: process.env.TOKENSECRET,
   tipeAPI: process.env.TIPEAPI,
   tipeORG: process.env.TIPEORG
