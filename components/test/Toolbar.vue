@@ -1,4 +1,4 @@
-<template>
+<template id="visitor-desktop-toolbar-template">
   <v-toolbar
     prominent
     color="white"
@@ -10,7 +10,7 @@
       </nuxt-link>
     </v-toolbar-title>
     <v-spacer id="spacer"></v-spacer>
-    <visitor-buttons/>
+    <visitor-buttons id='visitor-buttons-container'/>
     <!-- <v-toolbar-side-icon color="shop-green"></v-toolbar-side-icon> -->
   </v-toolbar>
 </template>
@@ -36,6 +36,9 @@
 }
 .menu-height, #spacer, .v-toolbar__content {
   height: 8em;
+}
+#visitor-buttons-container {
+  margin-top: 2em;
 }
 
 </style>

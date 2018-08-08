@@ -60,3 +60,7 @@ nav#navbar {
 img.v-jumbotron__image {
   opacity: .3;
 }
+
+aside#mobile-visitor-drawer {
+  background-color: rgba(58, 71, 153, .8);
+}

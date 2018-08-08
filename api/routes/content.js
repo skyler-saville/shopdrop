@@ -61,7 +61,7 @@ router.route('/content/mission_statement')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const content = data.blocks[1].value
         const image = data.blocks[2].value
 
@@ -84,7 +84,7 @@ router.route('/content/home_images')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log('home_images block[1].value', data.blocks[1].value)
+        // console.log('home_images block[1].value', data.blocks[1].value)
         // five images in each image template
         const image1 = data.blocks[0].value
         const image2 = data.blocks[1].value
@@ -114,7 +114,7 @@ router.route('/content/about')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const title = data.blocks[0].value
         const content = data.blocks[1].value
 
@@ -137,7 +137,7 @@ router.route('/content/about-folder')
     })
       .then(function (res) { return res.json() })
       .then(function (folder) {
-        console.log(folder)
+        // console.log(folder)
 
         res.json(folder)
       })
@@ -155,7 +155,7 @@ router.route('/content/contact')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const title = data.blocks[0].value
         const content = data.blocks[1].value
 
@@ -178,7 +178,7 @@ router.route('/content/signup')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const title = data.blocks[0].value
         const content = data.blocks[1].value
 
@@ -201,7 +201,7 @@ router.route('/content/login')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         let title
         let content
         if (data.blocks[0].value) {
@@ -234,7 +234,7 @@ router.route('/content/visitor-footer')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const content = data.blocks[1].value
 
         res.json({
@@ -255,14 +255,14 @@ router.route('/content/header_visitors')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const title = data.blocks[0].value
         const links = []
         for (var i = 1; i < data.blocks.length; i++) {
           var link = data.blocks[i].value
           links.push({link})
         }
-        console.log(links)
+        // console.log(links)
 
         res.json({
           title: marked(title),
@@ -283,12 +283,12 @@ router.route('/content/image_test')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log(data)
+        // console.log(data)
         const image = data.blocks[0].value
-        console.log('image.name', image.name)
-        console.log('image.source', image.source)
-        console.log('image.url', image.url)
-        console.log('image.id', image.id)
+        // console.log('image.name', image.name)
+        // console.log('image.source', image.source)
+        // console.log('image.url', image.url)
+        // console.log('image.id', image.id)
 
         res.json({
           url: image.url
@@ -308,8 +308,8 @@ router.route('/content/privacy_policy')
     })
       .then(function (res) { return res.json() })
       .then(function (data) {
-        console.log('Privacy Policy Reqested')
-        console.log(data.blocks[0])
+        // console.log('Privacy Policy Reqested')
+        // console.log(data.blocks[0])
         const doc = data.blocks[0].value
 
         res.json({
